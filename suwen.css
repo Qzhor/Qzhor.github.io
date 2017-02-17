@@ -1,6 +1,7 @@
 body{
   overflow: hidden;
   margin: 0;
+  background-color:#222222;
 }
 h1{
   position: fixed;
