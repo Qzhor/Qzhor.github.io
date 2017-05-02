@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+</head>
+<style>
+</style>
+
+<body>
+    <blockquote class="layui-elem-quote">
+        递归函数是在一个函数通过名字调用自身的情况下构成的，如下所示。
+    </blockquote>
+    <pre class="layui-code">//代码区域
+		function factorial(num){
+		if (num <= 1){
+		return 1;
+	} else {
+	return num * factorial(num-1);
+}
+}
+</pre>
+    <blockquote class="layui-elem-quote">
+        这是一个经典的递归阶乘函数。虽然这个函数表面看来没什么问题，但下面的代码却可能导致它出错。
+    </blockquote>
+    <pre class="layui-code">
+	var anotherFactorial = factorial;
+	factorial = null;
+	alert(anotherFactorial(4)); //出错！
+</pre>
+    <blockquote class="layui-elem-quote">
+        以上代码先把factorial()函数保存在变量anotherFactorial 中，然后将factorial 变量设 置为null，结果指向原始函数的引用只剩下一个。但在接下来调用anotherFactorial()时，由于必 须执行factorial()，而factorial 已经不再是函数，所以就会导致错误。在这种情况下，使用arguments. callee 可以解决这个问题。 我们知道，arguments.callee 是一个指向正在执行的函数的指针，因此可以用它来实现对函数 的递归调用，例如：
+    </blockquote>
+    <pre class="layui-code">
+	function factorial(num){
+	if (num <= 1){
+	return 1;
+} else {
+return num * arguments.callee(num-1);
+}
+}
+</pre>
+    <blockquote class="layui-elem-quote">
+        加粗的代码显示，通过使用arguments.callee 代替函数名，可以确保无论怎样调用函数都不会 出问题。因此，在编写递归函数时，使用arguments.callee 总比使用函数名更保险。 但在严格模式下，不能通过脚本访问arguments.callee，访问这个属性会导致错误。不过，可 以使用命名函数表达式来达成相同的结果。例如：
+    </blockquote>
+    <pre class="layui-code">
+	var factorial = (function f(num){
+	if (num <= 1){
+	return 1;
+} else {
+return num * f(num-1);
+}
+});
+</pre>
+    <blockquote class="layui-elem-quote">
+        以上代码创建了一个名为f()的命名函数表达式，然后将它赋值给变量factorial。即便把函数 赋值给了另一个变量，函数的名字f 仍然有效，所以递归调用照样能正确完成。这种方式在严格模式和 非严格模式下都行得通。
+    </blockquote>
+    <script type="text/javascript" src="plugins/layui/layui.js"></script>
+    <script>
+    layui.use('code', function() { //加载code模块
+        layui.code({
+            skin: 'notepad'
+        }); //引用code方法
+    });
+    </script>
+</body>
+
+</html>

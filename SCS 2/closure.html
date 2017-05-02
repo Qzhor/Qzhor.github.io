@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+</head>
+<style>
+</style>
+
+<body>
+	
+	<pre class="layui-code">//代码区域
+		function assignHandler(){
+var element = document.getElementById("someElement");
+var id = element.id;
+element.onclick = function(){
+alert(id);
+};
+element = null;
+}
+</pre>
+<blockquote class="layui-elem-quote">
+		在上面的代码中，通过把element.id 的一个副本保存在一个变量中，并且在闭包中引用该变量消
+除了循环引用。但仅仅做到这一步，还是不能解决内存泄漏的问题。必须要记住：闭包会引用包含函数
+的整个活动对象，而其中包含着element。即使闭包不直接引用element，包含函数的活动对象中也
+仍然会保存一个引用。因此，有必要把element 变量设置为null。这样就能够解除对DOM 对象的引
+用，顺利地减少其引用数，确保正常回收其占用的内存。
+	</blockquote>
+<script type="text/javascript" src="plugins/layui/layui.js"></script>
+<script>
+    layui.use('code', function() { //加载code模块
+    	layui.code({
+    		skin: 'notepad'
+        }); //引用code方法
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="plugins/easyui/easyui.css" media="all" />
+    <link rel="stylesheet" href="css/cover.css" />
+    <link rel="stylesheet" href="css/issue_release_detail.css" />
+</head>
+
+<body>
+    <header>
+        <i class="layui-icon">&#xe630;</i>
+        <span class="claim">认领</span>
+        <i class="layui-icon">&#xe630;</i>
+        <span class="confirm-claim">确定认领</span>
+        <i class="layui-icon">&#xe63c;</i>
+        <span class="cancel">取消登记</span>
+    </header>
+    <section class="info">
+        <p class="title">1.基本信息：</p>
+        <div class="info-box clearfix">
+            <div class="item-box">
+                <label>登记站点：</label>
+                <span>{$detail['registration_site']}</span>
+            </div>
+            <div class="item-box">
+                <label>接收站点：</label>
+                <span>{$detail['deal_site']}</span>
+            </div>
+            <div class="item-box">
+                <label>发布时间：</label>
+                <span>{$detail['create_time']}</span>
+            </div>
+            <div class="item-box block">
+                <label>问题件类型：</label>
+                <span>{$detail['order_type']}</span>
+            </div>
+            <div class="item-box">
+                <label>运单号：</label>
+                <span>{$detail['order_no']}</span>
+            </div>
+            <div class="item-box">
+                <label>问题件来源：</label>
+                <span>{$detail['order_resource']}</span>
+            </div>
+            <div class="item-box">
+                <label>问题件状态：</label>
+                <span>{$detail['order_claim']}</span>
+            </div>
+        </div>
+        <p class="title">2.收件人信息：</p>
+        <div class="info-box clearfix">
+            <div class="item-box block">
+                <label>收件人信息：</label>
+                <span>姓名：{$detail['rece_name']}</span>&nbsp;&nbsp;
+                <span>电话：{$detail['rece_phone']}</span>&nbsp;&nbsp;
+                <span>地址：{$detail['rece_prov']}/{$detail['rece_city']}/{$detail['rece_detail']}</span>
+            </div>
+            <div class="item-box block">
+                <label>发件人信息：</label>
+                <span>姓名：{$detail['send_name']}</span>&nbsp;&nbsp;
+                <span>电话：{$detail['send_phone']}</span>&nbsp;&nbsp;
+                <span>地址：{$detail['send_prov']}/{$detail['send_city']}/{$detail['send_detail']}</span>
+            </div>
+        </div>
+        <p class="title">3.内物详情：</p>
+        <div class="info-box clearfix">
+            <div class="item-box">
+                <label>颜色：</label>
+                <span>{$detail['order_color']}</span>
+            </div>
+            <div class="item-box">
+                <label>品牌：</label>
+                <span>{$detail['order_brand']}</span>
+            </div>
+        </div>
+        <p class="title">4.问题件描述：</p>
+        <div class="info-box clearfix">
+            <div class="item-box block">
+                <p>{$detail['order_state']}</p>
+            </div>
+        </div>
+        <p class="title">5.问题件附件：</p>
+        <div class="info-box clearfix">
+            <div class="item-box">
+              <img src="{$img}" alt="">
+          </div>
+      </div>
+  </section>
+
+  <section class="photo">
+    <div class="no ct">
+        <img src="__IMAGES__/0.jpg" alt="">
+        <p>还没有人认领哦！</p>
+    </div>
+    <div class="yes ct">
+        <img src="__IMAGES__/0.jpg" alt="">
+        <p>已被认领，快点确认吧！</p>
+    </div>
+</section>
+
+<!-- 认领弹窗 -->
+<div class="claim-layer">
+    <form id="newType" method="post" class="layui-form">
+        <p>发件人信息：</p>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label tr">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label tr">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label tr">地址</label>
+                <div class="layui-input-inline address">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <p class="special">收件人信息：</p>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label tr">姓名</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label tr">电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label tr">地址</label>
+                <div class="layui-input-inline address">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label tr order-num">运单号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label tr deal-label">处理方法</label>
+                <div class="layui-input-inline">
+                   <textarea name="" placeholder="" autocomplete="off" class="layui-textarea"></textarea>
+               </div>
+           </div>
+       </div>
+       <div class="layui-form-item">
+           <div class="layui-inline">
+               <label class="layui-form-label tr deal-label">处理方法</label>
+               <div class="layui-input-inline">
+                <div class="layui-box layui-upload-button">
+                    <form target="layui-upload-iframe" method="post" key="set-mine" enctype="multipart/form-data" action="/upload/">
+                        <input type="file" name="file-demo" class="layui-upload-file">
+                    </form>
+                    <span class="layui-upload-icon">
+                        <i class="layui-icon">&#xe608;</i>添加附件
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button lay-submit lay-filter="*" style="display: none;"></button>
+</form>
+
+</div>
+<script type="text/javascript" src="plugins/layui/layui.js"></script>
+<script type="text/javascript" src="plugins/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="plugins/easyui/jquery.easyui.min.js"></script>
+<script src="js/issue_release.js"></script>
+</body>
+</html>

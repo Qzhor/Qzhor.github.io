@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+</head>
+<style>
+</style>
+
+<body>
+	<blockquote class="layui-elem-quote">定义函数的 方式有两种：一种是函数声明，另一种就是函数表达式; 关于函数声明，它的一个重要特征就是函数声明提升（function declaration hoisting），意思是在执行 代码之前会先读取函数声明。这就意味着可以把函数声明放在调用它的语句后面。
+	</blockquote>
+	<pre class="layui-code">//代码区域
+		sayHi();
+		function sayHi(){
+		alert("Hi!");
+	}
+</pre>
+<blockquote class="layui-elem-quote">
+	这个例子不会抛出错误，因为在代码执行之前会先读取函数声明。 第二种创建函数的方式是使用函数表达式。函数表达式有几种不同的语法形式。下面是最常见的一 种形式。
+</blockquote>
+<pre class="layui-code">
+	var functionName = function(arg0, arg1, arg2){
+	//函数体
+};
+</pre>
+<blockquote class="layui-elem-quote">
+	这种形式看起来好像是常规的变量赋值语句，即创建一个函数并将它赋值给变量functionName。
+	这种情况下创建的函数叫做匿名函数（anonymous function），因为function 关键字后面没有标识符。
+	（匿名函数有时候也叫拉姆达函数。）匿名函数的name 属性是空字符串。
+	函数表达式与其他表达式一样，在使用前必须先赋值。以下代码会导致错误。
+</blockquote>
+<pre class="layui-code">
+	sayHi(); //错误：函数还不存在
+	var sayHi = function(){
+	alert("Hi!");
+};
+</pre>
+<blockquote class="layui-elem-quote">
+	理解函数提升的关键，就是理解函数声明与函数表达式之间的区别。例如，执行以下代码的结果可
+	能会让人意想不到。
+</blockquote>
+<pre class="layui-code">
+	//不要这样做！
+	if(condition){
+	function sayHi(){
+	alert("Hi!");
+}
+} else {
+function sayHi(){
+alert("Yo!");
+}
+}
+</pre>
+<blockquote class="layui-elem-quote">
+	表面上看，以上代码表示在condition 为true 时，使用一个sayHi()的定义；否则，就使用另
+	一个定义。实际上，这在ECMAScript 中属于无效语法，JavaScript 引擎会尝试修正错误，将其转换为合
+	理的状态。但问题是浏览器尝试修正错误的做法并不一致。大多数浏览器会返回第二个声明，忽略
+	condition；Firefox 会在condition 为true 时返回第一个声明。因此这种使用方式很危险，不应该
+	出现在你的代码中。不过，如果是使用函数表达式，那就没有什么问题了。
+</blockquote>
+<pre class="layui-code">
+	//可以这样做
+	var sayHi;
+	if(condition){
+	sayHi = function(){
+	alert("Hi!");
+};
+} else {
+sayHi = function(){
+alert("Yo!");
+};
+}
+</pre>
+<script type="text/javascript" src="plugins/layui/layui.js"></script>
+<script>
+    layui.use('code', function() { //加载code模块
+    	layui.code({
+    		skin: 'notepad'
+        }); //引用code方法
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+</head>
+<style>
+</style>
+
+<body>
+    <blockquote class="layui-elem-quote">
+        BEM代表块(Block),元素(Element),修饰符(Modifier)
+    </blockquote>
+    <pre class="layui-code">//代码区域
+        div.features
+        div.features_item
+        div.features_item-number
+        div.features_item-desc
+    </pre>
+   <blockquote class="layui-elem-quote">
+       <p>BEM设计模式</p>
+       <p>模块(没有前缀，多个单词用-连接)</p>
+       <p>元素(元素在模块之后，可以有多个层级，以__连接)</p>
+       <p>修饰(某元素、或者某模块特别的状态，必须有一个状态名和状态值，使用_连接)</p>
+   </blockquote>
+<script type="text/javascript" src="plugins/layui/layui.js"></script>
+<script>
+    layui.use('code', function() { //加载code模块
+        layui.code({
+            skin: 'notepad'
+        }); //引用code方法
+    });
+</script>
+</body>
+
+</html>

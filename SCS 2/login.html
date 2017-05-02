@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- 删除默认的苹果工具栏和菜单栏。 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<!-- telephone=no就禁止了把数字转化为拨号链接！ -->
+	<meta name="format-detection" content="telephone=no">
+	<!-- 控制状态栏显示样式 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>登录</title>
+	<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body>
+	<div class="layui-canvs"></div>
+	<div class="layui-layout layui-layout-login">
+		<h1>
+			<strong>管理系统后台</strong>
+			<em>Management System</em>
+		</h1>
+		<div class="layui-user-icon login-box">
+			<input type="text" placeholder="账号" class="login_txtbx"/>
+		</div>
+		<div class="layui-pwd-icon login-box">
+			<input type="password" placeholder="密码" class="login_txtbx"/>
+		</div>
+		<div class="layui-val-icon login-box">
+			<div class="layui-code-box">
+				<input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx">
+				<img src="images/verifyimg.png" alt="" class="verifyImg" id="verifyImg" onclick="javascript:this.src='xxx'+Math.random();">
+			</div>
+		</div>
+		<div class="layui-submit login-box">
+			<input type="button" value="立即登陆" class="submit_btn"/>
+		</div>
+		<div class="layui-login-text">
+			<p>© 2017-2097 Remix</p>
+			<p>Music <a href="" title="">qzhor.com</a></p>
+		</div>
+	</div>
+	<script type="text/javascript" src="plugins/layui/lay/dest/layui.all.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/jparticle.jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".layui-canvs").jParticle({
+				background: "#141414",
+				color: "#E6E6E6"
+			});
+	//登录链接测试，使用时可删除
+	$(".submit_btn").click(function(){
+		location.href="index.html";
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+header, footer {
+	background-color: #fff
+}
+
+/*header*/
+header, .avatar, .btn-box {
+	height: 100px;
+}
+.avatar {
+	width: 100px;
+	line-height: 100px;
+}
+.avatar > img {
+	width: 60px;
+	height: 60px;
+}
+.event img {
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+.event ul {
+	margin-top: 20px;
+	height: 60px;
+	margin-left: 30px;
+}
+.event li {
+	float: left;
+	margin-right: 50px;
+}
+.event p {
+	height: 15px;
+	line-height: 15px;
+	font-size: 13px;
+	text-align: center;
+}
+.btn-box {
+	margin-right: 50px;
+}
+.btn-box input {
+	margin-top: 45px;
+}
+
+/*图表和公告*/
+section.content {
+	margin: 8px 0;
+	height: 280px;
+}
+.chart, .notice {
+	height: 280px;
+	width: 49.6%;
+	background-color: #fff
+}
+.content p {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.content hr {
+	width: 94%;
+	margin: 10px auto;
+}
+.notice ul {
+	margin-left: 20px;
+	font-size: 13px;
+	letter-spacing: 2px;
+}
+.notice li {
+	margin-bottom: 3px;
+}
+.notice {
+}
+span.new {
+	color: #ef5350;
+	margin-left: 50px;
+}
+span.time {
+	float: right;
+	margin-right: 20px;
+}
+
+/*footer*/
+footer {
+	height: 190px;
+	line-height: 190px;
+}
+footer.banner img {
+	width: 1280px;
+	height: 160px;
+}

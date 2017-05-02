@@ -1,0 +1,52 @@
+section{
+	background-color: #fff;
+	padding-top: 10px;
+	padding-left: 20px;
+}
+h1{
+	color: #ef5350;
+	font-size: 20px;
+	font-weight: 300;
+}
+form{
+	margin-top: 10px;
+}
+/*issue部分*/
+.issue{
+	font-size: 14px;
+}
+.issue .layui-form-label{
+	padding-left: 0;
+	padding-right: 0;
+	width: 70px;
+}
+.issue .layui-input-block{
+	margin-left: 100px;
+}
+
+/*收发件人详细信息部分*/
+.details{
+	font-size: 13px;
+}
+.details label{
+	width: 100px;
+}
+.layui-form .layui-form-item .Addressee{
+	margin-left: 340px;
+}
+.personalInfo label{
+	font-weight: 600;
+}
+.details .layui-form-item .layui-input-inline{
+	width: 330px;
+}
+span.tip{
+	color: #40c4ff;
+	margin-right: 10px;
+}
+.release-btn{
+	margin-left: 130px;
+}
+.details .expression{
+	min-height: 328px;
+}

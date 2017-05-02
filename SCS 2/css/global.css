@@ -1,0 +1,162 @@
+
+/* 布局 */
+.site-tree, .site-content{display: inline-block;  *display:inline; *zoom:1; vertical-align: top; font-size: 14px;}
+.site-tree{width: 220px; min-height: 900px; padding: 5px 0 20px;}
+.site-content{width: 899px; min-height: 900px; padding: 20px 0 10px 20px;}
+
+/* 头部 */admin-side-toggle
+.header{height: 65px; border-bottom: 1px solid #404553;  background-color: #393D49; color: #fff;}
+.logo{position: absolute; left: 0; top: 18px;}
+.logo img{width: 82px; height: 31px;}
+
+.header .layui-nav{position: absolute; right: 0; top: 0; padding: 0; background: none;}
+.header .layui-nav .layui-nav-item{margin: 0 20px; line-height: 66px;}
+
+
+.header-index{background-color: #080018; border: none;}
+
+.layui-layout-admin .header-demo{border-bottom-color: #1AA094; background-color: #fff;}
+.header-demo .logo{left: 40px;}
+.header-demo .layui-nav{top: 0;}
+.header-demo .layui-nav .layui-nav-item{margin: 0 10px; line-height: 65px;}
+.header-demo .layui-nav .layui-nav-item a{color: #999;}
+.header-demo .layui-nav .layui-this{background-color: #f2f2f2;}
+.header-demo .layui-nav .layui-nav-item a:hover, 
+.header-demo .layui-nav .layui-this a{color: #000;}
+.header-demo .layui-nav .layui-this:after, 
+.header-demo .layui-nav-bar{background-color: #393D49;}
+.header-demo .layui-nav .layui-this a{padding: 0 20px;}
+
+/* 底部 */
+.footer{padding: 30px 0; line-height: 30px; text-align: center; background-color: #eee; color: #666; font-weight: 300;}
+body .layui-layout-admin .footer-demo{height: auto; padding: 5px 0; line-height: 26px;}
+.footer a{padding: 0 5px;}
+
+/* 文档 */
+.site-tree{border-right: 1px solid #eee; }
+/* 演示 */
+.layui-nav-item .layui-icon{position: relative; /*font-size: 20px;*/}
+
+/* 独立组件 */
+
+/* 自定义css */
+.admin-nav-card{
+	margin-top: 5px;
+}
+.admin-nav-card .layui-icon{
+	position: relative;
+}
+.admin-nav-card .layui-tab-item iframe{
+	width: 100%;
+	border: 0;
+	height: 100%;
+}
+.admin-nav-card>.layui-tab-title{
+	border-bottom: 1px solid #1AA094;
+}
+.admin-nav-card .layui-tab-title cite{
+	font-style: normal;
+}
+.admin-nav-card>.layui-tab-title .layui-this{
+	color: white;
+    background-color: #1AA094;
+}
+.admin-nav-card>.layui-tab-title .layui-this:after{
+	border-bottom: 0;
+}
+.admin-header-user img{
+	width: 40px; height: 40px; border-radius: 100%;    
+	/*position: relative;
+    top: 15px;*/
+}
+.admin-header-user .layui-nav-more{
+	top:33px;
+}
+.admin-header-user .layui-nav-mored{
+	top: 26px;
+}
+.layui-nav-item a cite{padding: 0 10px;}
+
+/*lock*/
+.admin-header-lock{
+	width: 320px; height: 150px; padding: 20px; position: relative; text-align: center;
+}
+.admin-header-lock-img{
+	width: 60px; height: 60px; margin: 0 auto;
+}
+.admin-header-lock-img img{
+	width: 60px; height: 60px; border-radius: 100%;
+}
+.admin-header-lock-name{
+	color: #009688;margin: 8px 0 15px 0;
+}
+.admin-header-lock-input{
+	width: 150px; color: #FFFFFF; height: 30px; border: 0;background-color: #009688; padding: 0 7px; border-radius: 2px;
+}
+/**/
+.admin-main {margin: 15px;}
+
+.admin-side-toggle,.admin-side-full{
+	position: absolute; cursor: pointer;
+    z-index: 19940201;
+    left: 200px;
+    color: white;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    background-color: #1AA094;
+    line-height: 30px;
+    top: 25%;
+}
+.admin-side-toggle:hover{
+	background-color: #5FB878;
+}
+.admin-side-full{
+	left: 240px;
+}
+.admin-login-box{
+	width: 185px; height: 70px; position: relative;
+}
+
+.beg-navbar .layui-nav-child dd a{
+	padding-left: 30px;
+}
+
+
+.admin-contextmenu{
+	position: absolute;line-height: 36px;padding: 5px 0;
+	border: 1px solid #d2d2d2;background-color: white;z-index: 19940201;border-radius: 2px;white-space: nowrap;top:30px;
+	/*width: 100px;height: 200px; */
+}
+.admin-contextmenu ul li{
+	padding: 0 15px;
+}
+.admin-contextmenu ul li:hover{
+	background-color: #eee;
+	cursor: pointer;
+}
+
+
+/* 适配多设备 */
+@media screen and (max-width: 750px) {
+  .layui-main{width: auto; margin: 0 10px;}
+  .logo,
+  .header-demo .logo{left: 10px;}
+
+  .header .layui-nav .layui-nav-item{margin: 0;}
+  .header .layui-nav .layui-nav-item a{padding: 0 15px;}
+
+  .layui-layer-dir{display: none;}
+  .site-tree-mobile{display: block!important; position: fixed; z-index: 100000; bottom: 15px; left: 15px; width: 50px; height: 50px; line-height: 50px; border-radius: 2px; text-align: center; background-color: rgba(0,0,0,.7); color: #fff;}
+  .site-mobile .site-tree-mobile{display: none !important;}
+  .site-mobile .site-tree{left: 0;}
+  .site-mobile .site-mobile-shade{content: ''; position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0,0,0,.8); z-index: 9999;}
+  .site-tree-mobile i{font-size: 20px;}
+  .layui-layout-admin .layui-side{position: fixed; top: 0; left: -260px; transition: all .3s; -webkit-transition: all .3s; z-index: 10000;}
+  .layui-body{position: static; bottom: 0; left: 0;}
+  .site-mobile .layui-side{left: 0;}
+  body .layui-layout-admin .footer-demo{position: static;}
+
+  .admin-side-toggle ,.admin-header-item{display: none;}
+  .admin-header-item-mobile{ display: block; }
+}

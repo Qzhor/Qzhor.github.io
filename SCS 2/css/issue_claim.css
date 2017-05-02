@@ -1,0 +1,77 @@
+header,section{
+	background-color: #fff;
+}
+div.layui-form{
+}
+header .layui-form-item .layui-inline{
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+header .layui-form-label{
+	padding: 9px 0;
+	text-align: center;
+}
+header .layui-form-item .statue-select.layui-input-inline{
+	width: 85px;
+}
+header .layui-form-item .date-box.layui-input-inline{
+	margin-top: 7px;
+}
+header a{
+	text-decoration: underline;
+}
+header .advanced-query .layui-input-inline{
+	width: 160px;
+}
+header .pack.layui-form-label,header .shape.layui-form-label{
+	width: 70px;
+	text-align: right;
+	padding-right: 5px;
+}
+header .shape.layui-form-label{
+	width: 50px;
+	margin-left: -10px;
+}
+header .express-type.layui-form-label{
+	margin-left: -10px;
+}
+header .line2.layui-form-item .layui-inline{
+	margin-top: 0;
+}
+div.layui-form{
+}
+
+/*问题件列表*/
+section{
+	margin-top: 7px;
+	padding: 10px;
+}
+.express-box{
+	float: left;
+	width: 23%;
+	cursor: pointer;
+	margin:0 1% 10px 0;
+}
+.advanced-query{
+	/*display: none;*/
+	padding-bottom: 1px;
+}
+.advanced-query .layui-form-checkbox{
+	height: 22px;
+	line-height: 22px;
+	margin-top: 0;
+	padding-right: 21px;
+}
+.advanced-query .layui-form-checkbox i{
+	width: 25px;
+	font-size: 18px;
+}
+.advanced-query .layui-inline > span{
+	font-size: 13px;
+	color: red;
+}
+span.time{
+	margin-left: 10px;
+}
+.express-box{
+}
