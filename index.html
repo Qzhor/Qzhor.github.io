@@ -4,120 +4,60 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>管理系统后台</title>
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- 删除默认的苹果工具栏和菜单栏。 -->
+	<meta name="apple-mobile-web-app-capable" content="yes">	
+	<!-- telephone=no就禁止了把数字转化为拨号链接！ -->
 	<meta name="format-detection" content="telephone=no">
-	
+	<!-- 控制状态栏显示样式 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>登录</title>
 	<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
-	<link rel="stylesheet" href="css/global.css" media="all">
-	<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body>
-	<div class="layui-layout layui-layout-admin" style="border-bottom: solid 5px #1aa094;">
-		<div class="layui-header header header-demo">
-			<div class="layui-main">
-				<div class="admin-login-box">
-					<a class="logo" style="left: 0;" href="javascript:;">
-						<span style="font-size: 22px;margin-left: 20px">No Logo</span>
-					</a>
-					<div class="admin-side-toggle">
-						<i class="fa fa-bars" aria-hidden="true"></i>
-					</div>
-					<div class="admin-side-full">
-						<i class="fa fa-life-bouy" aria-hidden="true"></i>
-					</div>
-				</div>
-				<ul class="layui-nav admin-header-item">
-						<li class="layui-nav-item">
-							<a href="javascript:;" class="fun-a">Function A</a>
-						</li>
-						<li class="layui-nav-item">
-							<a href="javascript:;" class="fun-b">Function B</a>
-						</li>
-						<li class="layui-nav-item">
-							<a href="javascript:;" class="fun-c">Function C</a>
-						</li>
-						<li class="layui-nav-item">
-							<a href="javascript:;" class="fun-d">Function D</a>
-						</li>
-						<li class="layui-nav-item">
-							<a href="javascript:;" class="lock-a">锁屏</a>
-						</li>
-						<li class="layui-nav-item">
-							<a href="javascript:;" class="admin-header-user">
-								<img src="images/Qzhor.PNG" />
-								<span>qzhor</span>
-							</a>
-							<dl class="layui-nav-child">
-								<dd>
-									<a href="javascript:;"><i class="fa fa-user-circle" aria-hidden="true"></i> 个人信息</a>
-								</dd>
-								<dd>
-									<a href="javascript:;"><i class="fa fa-gear" aria-hidden="true"></i> 设置</a>
-								</dd>
-								<dd id="lock">
-									<a href="javascript:;">
-										<i class="fa fa-lock" aria-hidden="true" style="padding-right: 3px;padding-left: 1px;"></i> 锁屏
-									</a>
-								</dd>
-								<dd>
-									<a href="login.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a>
-								</dd>
-							</dl>
-						</li>
-					</ul>
+	<div class="layui-canvs"></div>
+	<div class="layui-layout layui-layout-login">
+		<h1>
+			<strong>管理系统后台</strong>
+			<em>Management System</em>
+		</h1>
+		<div class="layui-user-icon login-box">
+			<input type="text" placeholder="账号" class="login_txtbx"/>
+		</div>
+		<div class="layui-pwd-icon login-box">
+			<input type="password" placeholder="密码" class="login_txtbx"/>
+		</div>
+		<div class="layui-val-icon login-box">
+			<div class="layui-code-box">
+				<input type="text" id="code" name="code" placeholder="验证码" maxlength="4" class="login_txtbx">
+				<img src="images/verifyimg.png" alt="" class="verifyImg" id="verifyImg" onclick="javascript:this.src='xxx'+Math.random();">
 			</div>
 		</div>
-		<div class="layui-side layui-bg-black" id="admin-side">
-			<div class="layui-side-scroll" id="admin-navbar-side" lay-filter="side"></div>
+		<div class="layui-submit login-box">
+			<input type="button" value="立即登陆" class="submit_btn"/>
 		</div>
-		<div class="layui-body" style="bottom: 0;border-left: solid 2px #1AA094;" id="admin-body">
-			<div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab">
-				<ul class="layui-tab-title">
-					<li class="layui-this">
-						<cite>首页</cite>
-					</li>
-				</ul>
-				<div class="layui-tab-content" style="min-height: 150px; padding: 0;">
-					<div class="layui-tab-item layui-show">
-						<iframe src="welcome.html"></iframe>
-					</div>
-				</div>
-			</div>
+		<div class="layui-login-text">
+			<p>© 2017-2097 Remix</p>
+			<p>Music <a href="" title="">qzhor.com</a></p>
 		</div>
-		<div class="layui-footer footer footer-demo" id="admin-footer">
-			<div class="layui-main">
-				<p> &copy; If you can't live longer,live deeper</p>
-			</div>
-		</div>
-		<div class="site-tree-mobile layui-hide">
-			<i class="layui-icon">&#xe602;</i>
-		</div>
-		<div class="site-mobile-shade"></div>
-
-		<!--锁屏模板 start-->
-		<script type="text/template" id="lock-temp">
-			<div class="admin-header-lock" id="lock-box">
-				<div class="admin-header-lock-img">
-					<img src="images/Qzhor.PNG"/>
-				</div>
-				<div class="admin-header-lock-name" id="lockUserName">Qzhor</div>
-				<input type="text" class="admin-header-lock-input" value="输入密码解锁.." name="lockPwd" id="lockPwd" />
-				<button class="layui-btn layui-btn-small" id="unlock">解锁</button>
-			</div>
-		</script>
-		<!--锁屏模板 end -->
-
-		<script type="text/javascript" src="plugins/layui/layui.js"></script>
-		<script type="text/javascript" src="datas/nav.js"></script>
-		<script src="js/index.js"></script>
-
 	</div>
+	<script type="text/javascript" src="plugins/layui/lay/dest/layui.all.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/jparticle.jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".layui-canvs").jParticle({
+				background: "#141414",
+				color: "#E6E6E6"
+			});
+	//登录链接测试，使用时可删除
+	$(".submit_btn").click(function(){
+		location.href="indexMain.html";
+	});
+});
+</script>
 </body>
-
 </html>
