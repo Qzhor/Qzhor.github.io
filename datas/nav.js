@@ -78,4 +78,9 @@ var navs = [{
 	"icon": "&#xe604;",
 	"href": "h5.html",
 	"spread": false
+},{
+	"title": "原生js实现气泡碰撞效果",
+	"icon": "&#xe636;",
+	"href": "impact.html",
+	"spread": false
 }];
