@@ -6,3 +6,5 @@ Vue practices.
 1. Shopping Cart
 2. JD
 3. TodoList
+
+To be continued...
